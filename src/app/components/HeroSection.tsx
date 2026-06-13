@@ -47,7 +47,7 @@ export default function HeroSection() {
             {[...skills, ...skills].map((skill, index) => (
               <span
                 key={`${skill.name}-${index}`}
-                className="mx-4 font-sans text-sm tracking-wide text-secondary-text"
+                className="mx-4 font-sans text-sm tracking-wide text-muted-accent"
               >
                 {skill.name} ·
               </span>

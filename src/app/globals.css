@@ -15,14 +15,14 @@
 }
 
 :root {
-  --background: #06141B;
-  --foreground: #CCD0CF;
-  --color-deep-bg: #06141B;
-  --color-surface-bg: #11212D;
-  --color-elevated-surface: #253745;
-  --color-muted-accent: #4A5C6A;
-  --color-secondary-text: #9BA8AB;
-  --color-primary-text: #CCD0CF;
+  --background: #CCD0CF;
+  --foreground: #06141B;
+  --color-deep-bg: #CCD0CF;
+  --color-surface-bg: #9BA8AB;
+  --color-elevated-surface: #4A5C6A;
+  --color-muted-accent: #253745;
+  --color-secondary-text: #11212D;
+  --color-primary-text: #06141B;
 }
 
 @theme inline {

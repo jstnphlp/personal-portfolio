@@ -31,7 +31,7 @@ export default function ProjectsSection() {
   return (
     <section id="work" className="bg-deep-bg px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <span className="font-sans text-xs tracking-widest text-secondary-text">
+        <span className="font-sans text-xs tracking-widest text-muted-accent">
           02 / SELECTED WORK
         </span>
 
@@ -45,7 +45,7 @@ export default function ProjectsSection() {
               <span className="px-4 font-sans text-2xl font-semibold text-primary-text transition-colors duration-200 md:text-3xl lg:text-4xl">
                 {project.name}
               </span>
-              <span className="px-4 text-right font-sans text-xs tracking-widest text-secondary-text">
+              <span className="px-4 text-right font-sans text-xs tracking-widest text-muted-accent">
                 {project.tag}
               </span>
             </a>

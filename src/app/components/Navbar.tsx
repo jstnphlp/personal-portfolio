@@ -11,7 +11,7 @@ const links: readonly NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-deep-bg">
+    <nav className="sticky top-0 z-50 border-b border-elevated-surface bg-deep-bg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <a
           href="#"

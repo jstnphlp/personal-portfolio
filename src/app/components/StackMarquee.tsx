@@ -24,7 +24,7 @@ export default function StackMarquee() {
           {doubled.map((item, index) => (
             <span
               key={`${item.name}-${index}`}
-              className="mx-4 font-sans text-sm tracking-wide text-secondary-text"
+              className="mx-4 font-sans text-sm tracking-wide text-muted-accent"
             >
               {item.name} ·
             </span>

@@ -14,12 +14,12 @@ const config: TailwindConfig = {
   theme: {
     extend: {
       colors: {
-        "deep-bg": "#06141B",
-        "surface-bg": "#11212D",
-        "elevated-surface": "#253745",
-        "muted-accent": "#4A5C6A",
-        "secondary-text": "#9BA8AB",
-        "primary-text": "#CCD0CF",
+        "deep-bg": "#CCD0CF",
+        "surface-bg": "#9BA8AB",
+        "elevated-surface": "#4A5C6A",
+        "muted-accent": "#253745",
+        "secondary-text": "#11212D",
+        "primary-text": "#06141B",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

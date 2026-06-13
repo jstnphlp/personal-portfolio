@@ -2,11 +2,11 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="border-t border-elevated-surface bg-deep-bg px-6 py-24"
+      className="border-t border-elevated-surface bg-surface-bg px-6 py-24"
     >
       <div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-2">
         <div>
-          <span className="font-sans text-xs tracking-widest text-secondary-text">
+          <span className="font-sans text-xs tracking-widest text-muted-accent">
             01 / ABOUT
           </span>
         </div>
