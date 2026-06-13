@@ -36,14 +36,44 @@ const SURFACE_BG_HEX = "#11212D";
 const HEADLINE_CLASSES =
   "font-sans text-7xl font-bold tracking-tight leading-none text-[#CCD0CF] md:text-8xl lg:text-9xl";
 
+const MOUSE_RESET_X = -9999;
+const MOUSE_RESET_Y = -9999;
+
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosRef = useRef<{ readonly x: number; readonly y: number }>({
-    x: -9999,
-    y: -9999,
+    x: MOUSE_RESET_X,
+    y: MOUSE_RESET_Y,
+  });
+  const globalMouseRef = useRef<{ readonly clientX: number; readonly clientY: number }>({
+    clientX: MOUSE_RESET_X,
+    clientY: MOUSE_RESET_Y,
   });
 
+  const updateRelativePosition = (): void => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const rect = hero.getBoundingClientRect();
+    const isVisible = rect.bottom > 0 && rect.top < window.innerHeight;
+
+    if (!isVisible) {
+      mousePosRef.current = { x: MOUSE_RESET_X, y: MOUSE_RESET_Y };
+      return;
+    }
+
+    if (globalMouseRef.current.clientX === MOUSE_RESET_X) return;
+
+    mousePosRef.current = {
+      x: globalMouseRef.current.clientX - rect.left,
+      y: globalMouseRef.current.clientY - rect.top,
+    };
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
+    globalMouseRef.current = {
+      clientX: e.clientX,
+      clientY: e.clientY,
+    };
     const rect = heroRef.current?.getBoundingClientRect();
     if (!rect) return;
     mousePosRef.current = {
@@ -59,10 +89,22 @@ export default function HeroSection() {
       const rect = hero.getBoundingClientRect();
       const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
       hero.style.setProperty("--scroll-progress", `${progress}`);
+      updateRelativePosition();
+    };
+
+    const handleGlobalMouseMove = (e: MouseEvent): void => {
+      globalMouseRef.current = {
+        clientX: e.clientX,
+        clientY: e.clientY,
+      };
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("mousemove", handleGlobalMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleGlobalMouseMove);
+    };
   }, []);
 
   return (
