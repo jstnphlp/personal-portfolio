@@ -38,7 +38,7 @@ export default function ProjectsSection() {
   const { ref, visible } = useFadeInOnScroll();
 
   return (
-    <section id="work" className="section-transition relative bg-deep-bg px-6 py-24">
+    <section id="work" className="section-transition relative snap-start snap-always bg-deep-bg px-6 py-24">
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 z-10 h-32"
         style={{

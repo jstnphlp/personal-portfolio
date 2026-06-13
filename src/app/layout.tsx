@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", inter.variable, "font-sans", geist.variable)}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={cn("h-screen overflow-hidden", "antialiased", inter.variable, "font-sans", geist.variable)}>
+      <body className="h-screen overflow-y-auto snap-y snap-mandatory">{children}</body>
     </html>
   );
 }

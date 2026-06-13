@@ -111,7 +111,7 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen overflow-hidden"
+      className="relative min-h-screen snap-start snap-always overflow-hidden"
       style={{
         background: `color-mix(in srgb, ${SURFACE_BG_HEX} calc(var(--scroll-progress, 0) * 100%), ${DEEP_BG_HEX})`,
         transition: "background 0.1s ease-out",
