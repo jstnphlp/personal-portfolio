@@ -11,13 +11,11 @@ interface SkillItem {
 }
 
 const SKILLS: readonly SkillItem[] = [
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "TypeScript" },
-  { name: "Python" },
-  { name: "Tailwind" },
-  { name: "Prisma" },
-  { name: "PostgreSQL" },
+  { name: "Full Stack Development" },
+  { name: "UI/UX Design" },
+  { name: "Database Architecture" },
+  { name: "System Design" },
+  { name: "Print & Production" },
 ];
 
 const HEADLINE_WORDS = ["Developer.", "Student.", "Builder."] as const;

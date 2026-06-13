@@ -83,6 +83,8 @@ export default function KineticTextMatrix(): React.JSX.Element {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
+      accumulatedRef.current = 0;
+      setMatrixState(buildInitialState());
     };
 
     const observer = new IntersectionObserver(

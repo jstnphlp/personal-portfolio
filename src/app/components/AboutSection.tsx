@@ -8,7 +8,7 @@ const TRACKING_LABEL = "01 / SPECIFICATION";
 const HEADLINE = "Crafting systems that feel effortless.";
 
 const PROSE_TEXT =
-  "I\u2019m a full stack developer and CS student at Mapua University Makati. I build products that are fast, purposeful, and grounded in real user needs \u2014 from architecture to interface. Outside of coursework, I run beyond.ink, a print and design shop in Taguig. I like systems that work quietly, and interfaces that get out of the way.";
+  "I\u2019m a full stack developer and CS student at Mapua University Makati. I build products that are fast, purposeful, and grounded in real user needs \u2014 from architecture to interface. I also co-founded beyond.ink, a printing shop we\u2019re using as a gateway into the tech space \u2014 offering web and system development alongside print and design.";
 
 const CURSOR_CLASS = "inline-block w-[2px] h-[1em] bg-primary-text ml-0.5 align-middle animate-pulse";
 

@@ -14,7 +14,7 @@ export function useFadeInOnScroll(threshold = 0.15): FadeInScrollResult {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
+        setVisible(entry.isIntersecting);
       },
       { threshold }
     );

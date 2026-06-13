@@ -56,6 +56,7 @@ export default function ProximityDotGrid({
     };
     resize();
     window.addEventListener("resize", resize);
+    window.addEventListener("scroll", resize, { passive: true });
 
     const baseRgb = parseHex(dotColor);
     const glowRgb = parseHex(glowColor);
@@ -93,6 +94,7 @@ export default function ProximityDotGrid({
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("scroll", resize);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [dotSize, gap, baseOpacity, glowOpacity, glowRadius, dotColor, glowColor, mousePosRef]);
