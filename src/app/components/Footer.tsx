@@ -19,7 +19,16 @@ export default function Footer() {
   const { ref, visible } = useFadeInOnScroll();
 
   return (
-    <footer className="section-transition relative border-t border-elevated-surface bg-deep-bg px-6 py-8">
+    <footer className="section-transition relative overflow-hidden border-t border-elevated-surface bg-deep-bg px-6 py-8">
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "128px 128px",
+        }}
+      />
+
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 z-10 h-32"
         style={{
@@ -31,7 +40,7 @@ export default function Footer() {
       <div
         ref={ref}
         className={cn(
-          "transition-all duration-700 ease-out",
+          "relative z-10 transition-all duration-700 ease-out",
           visible
             ? "translate-y-0 opacity-100"
             : "translate-y-6 opacity-0"

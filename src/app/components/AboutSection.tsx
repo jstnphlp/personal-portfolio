@@ -2,6 +2,7 @@
 
 import { useScrollTypewriter } from "@/hooks/useScrollTypewriter";
 import KineticTextMatrix from "./KineticTextMatrix";
+import { Ripple } from "@/components/ui/ripple";
 
 const TRACKING_LABEL = "01 / SPECIFICATION";
 
@@ -34,9 +35,18 @@ export default function AboutSection(): React.JSX.Element {
   return (
     <section
       id="about"
-      className="flex min-h-screen snap-start snap-always w-full flex-col items-center justify-center bg-deep-bg px-6 py-12 md:px-16 lg:px-24"
+      className="relative flex min-h-screen snap-start snap-always w-full flex-col items-center justify-center overflow-hidden bg-deep-bg px-6 py-12 md:px-16 lg:px-24"
     >
-      <div className="w-full max-w-7xl">
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <Ripple
+          mainCircleSize={300}
+          mainCircleOpacity={0.08}
+          numCircles={6}
+          ringColor="#253745"
+        />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl">
         <div className="grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
           <div className="space-y-6 lg:col-span-7">
             <span className="block font-sans text-xs font-semibold uppercase tracking-[0.25em] text-muted-accent">
