@@ -4,14 +4,26 @@
   "AGENTS.md",
   "SKILLS.md"
  ],
- "mcpServers": {
-  "chrome-devtools": {
-   "command": "npx",
-   "args": [
-    "-y",
-    "chrome-devtools-mcp",
-    "--autoConnect"
-   ]
+  "mcp": {
+   "chrome-devtools": {
+    "type": "local",
+    "command": [
+     "npx",
+     "-y",
+     "chrome-devtools-mcp",
+     "--autoConnect"
+    ],
+    "enabled": true
+   },
+   "playwright": {
+    "type": "local",
+    "command": [
+     "npx",
+     "-y",
+     "@playwright/mcp"
+    ],
+    "enabled": true,
+    "timeout": 30000
+   }
   }
- }
 }
