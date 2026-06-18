@@ -20,16 +20,24 @@ Reference this before starting any task to know which tools to reach for.
 ---
 
 ### Chrome DevTools MCP
+**Status:** ✓ Connected and confirmed working
+**Server:** 127.0.0.1:9222
+
 **Purpose:** Live inspection and debugging of the running portfolio in the browser.
 
+**How to connect in every task:**
+Use the Chrome DevTools MCP tool pointed at 127.0.0.1:9222.
+The dev server runs at localhost:3000.
+
 **When to use:**
-- Verifying that Tailwind color tokens are rendering correctly (`deep-bg`, `surface-bg`, etc.)
+- Verifying Tailwind color tokens are rendering correctly
 - Debugging layout issues (spacing, overflow, flex/grid problems)
 - Checking computed styles and font rendering
 - Inspecting the DOM after component changes
+- Reading console errors and warnings
 - Performance profiling (paint, layout shift, render time)
 
-**Key rule:** After any visual change, use this to confirm the render matches intent — don't just trust the code.
+**Key rule:** After any visual change in a task, always connect to 127.0.0.1:9222 and verify the render before marking complete.
 
 ---
 

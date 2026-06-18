@@ -1,6 +1,7 @@
 "use client";
 
 import { CodeBlock } from "@/components/ui/code-block";
+import { GridPattern } from "@/components/ui/grid-pattern";
 import { useFadeInOnScroll } from "@/hooks/useFadeInOnScroll";
 import { cn } from "@/lib/utils";
 
@@ -96,12 +97,19 @@ export default function SkillsSection(): React.JSX.Element {
   return (
     <section
       id="skills"
-      className="flex min-h-screen snap-start snap-always w-full flex-col items-center justify-center bg-deep-bg px-6 py-12 md:px-16 lg:px-24"
+      className="relative flex min-h-screen snap-start snap-always w-full flex-col items-center justify-center overflow-hidden bg-deep-bg px-6 py-12 md:px-16 lg:px-24"
     >
+      <GridPattern
+        width={40}
+        height={40}
+        strokeDasharray="1 3"
+        className="absolute inset-0 z-0 fill-[#253745]/10 stroke-[#253745]/10 [mask-image:radial-gradient(ellipse_at_center,white,transparent_75%)]"
+      />
+
       <div
         ref={ref}
         className={cn(
-          "w-full max-w-7xl transition-all duration-700 ease-out",
+          "relative z-10 w-full max-w-7xl transition-all duration-700 ease-out",
           visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         )}
       >

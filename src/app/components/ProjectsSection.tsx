@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { Meteors } from "@/components/ui/meteors";
 import { useFadeInOnScroll } from "@/hooks/useFadeInOnScroll";
 import { useSwipe } from "@/hooks/useSwipe";
 
@@ -58,12 +59,16 @@ export default function ProjectsSection(): React.JSX.Element {
   return (
     <section
       id="work"
-      className="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-deep-bg px-6 py-8 md:px-16 lg:px-24"
+      className="relative flex min-h-screen snap-start snap-always flex-col items-center justify-center overflow-hidden bg-deep-bg px-6 py-8 md:px-16 lg:px-24"
     >
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Meteors number={12} meteorColor="#4A5C6A" className="bg-[#4A5C6A]" />
+      </div>
+
       <div
         ref={ref}
         className={cn(
-          "w-full max-w-7xl transition-opacity duration-700 ease-out",
+          "relative z-10 w-full max-w-7xl transition-opacity duration-700 ease-out",
           visible ? "opacity-100" : "opacity-0"
         )}
       >
